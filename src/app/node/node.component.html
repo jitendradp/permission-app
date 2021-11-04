@@ -1,0 +1,16 @@
+<!-- <div style="position:relative;">
+     <label class='node-container' (click)="addChildren(node)">Add children</label>
+    <div *ngFor="let children of node.children" class="node-c">
+      <node [node]='children'></node>
+    </div>
+    </div>
+  -->
+
+<ng-container *ngIf="node.children.length > 0">
+  <input type="checkbox" checked="checked" id="c2" />
+  <ul>
+    <li *ngFor="let children of node.children">
+      <span class="tree_label">{{ children.text }}</span>
+    </li>
+  </ul>
+</ng-container>
