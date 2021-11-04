@@ -31,15 +31,15 @@ export class TreeComponent implements OnInit {
     },
     {
       children: [],
-      text: 'firstNode',
+      text: 'Second Node',
     },
     {
       children: [],
-      text: 'firstNode',
+      text: 'Third Node',
     },
     {
       children: [],
-      text: '4 child',
+      text: 'Fourth Node',
     },
     {
       children: [
@@ -60,13 +60,13 @@ export class TreeComponent implements OnInit {
           text: 'firstNode',
         },
       ],
-      text: '5th child',
+      text: 'Fifth child',
     },
   ];
   ngOnInit() {
     let firstNode: Node = {
       children: [],
-      text: 'firstNode',
+      text: 'Sixth Node',
     };
     this.tree.push(firstNode);
   }
