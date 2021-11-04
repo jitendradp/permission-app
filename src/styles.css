@@ -107,7 +107,6 @@ label.tree_label:hover {
   Tree expanded icon
 */
 label.tree_label:before {
-  background: #000;
   color: #fff;
   position: relative;
   z-index: 1;
@@ -116,13 +115,12 @@ label.tree_label:before {
   width: 1em;
   height: 1em;
   border-radius: 1em;
-  content: '+';
   text-align: center;
   line-height: 0.9em;
 }
 
 :checked ~ label.tree_label:before {
-  content: '+';
+  /* content: '+'; */
 }
 
 /* ————————————————————–
@@ -185,4 +183,5 @@ label.tree_label:after {
 
 ul {
   padding-left: 0px;
+  list-style-type: none;
 }
