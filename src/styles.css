@@ -114,7 +114,7 @@ label.tree_label:before {
   margin: 0 1em 0 -2em;
   width: 1em;
   height: 1em;
-  border-radius: 1em;
+  /* border-radius: 1em; */
   text-align: center;
   line-height: 0.9em;
 }
@@ -146,7 +146,7 @@ label.tree_label:before {
   width: 1em;
   border-bottom: 1px solid #777;
   border-left: 1px solid #777;
-  border-radius: 0 0 0 0.3em;
+  /* border-radius: 0 0 0 0.3em; */
   content: '';
 }
 
@@ -155,7 +155,7 @@ label.tree_label:after {
 }
 
 :checked ~ label.tree_label:after {
-  border-radius: 0 0.3em 0 0;
+  /* border-radius: 0 0.3em 0 0; */
   border-top: 1px solid #777;
   border-right: 1px solid #777;
   border-bottom: 0;
@@ -178,7 +178,7 @@ label.tree_label:after {
   display: block;
   background: #eee;
   padding: 1em;
-  border-radius: 0.3em;
+  /* border-radius: 0.3em; */
 }
 
 ul {
