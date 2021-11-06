@@ -39,7 +39,7 @@ export class TreeComponent implements OnInit {
     let firstNode: Node = {
       children: [],
       text: 'Sixth Node',
-      
+      form: this.getControl(3),
     };
     this.setForm();
     this.tree.push(firstNode);
@@ -64,10 +64,10 @@ export class TreeComponent implements OnInit {
     // this.tree.push(newNode);
   }
 
-  public getControl(index: number = 0) {
+  public getControl(index: number = 0): FormGroup {
     let otherForm = this.personalForm.get('other') as FormArray;
-    let formGroup = otherForm.at(index);
-    console.log(formGroup);
+    let formGroup = otherForm.at(index) as FormGroup;
+    return formGroup;
   }
 
   setForm() {
@@ -97,14 +97,17 @@ export class TreeComponent implements OnInit {
       {
         children: [],
         text: 'Second Node',
+        form: this.getControl(0),
       },
       {
         children: [],
         text: 'Third Node',
+        form: this.getControl(1),
       },
       {
         children: [],
         text: 'Fourth Node',
+        form: this.getControl(2),
       },
       // {
       //   children: [

@@ -8,7 +8,8 @@
       checked="checked"
       id="c1"
     />
-    <label class="tree_label" for="c1">{{ node.text }}</label>
+    <app-render-node [node]="node"></app-render-node>
+    <!-- <label class="tree_label" for="c1">{{ node.text }} </label> -->
     <!--
         <ng-container *ngIf=node.children.length > 0 >
             <input type="checkbox" checked="checked" id="c2" />

@@ -6,10 +6,17 @@ import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { NodeComponent } from './node/node.component';
 import { TreeComponent } from './tree/tree.component';
+import { RenderNodeComponent } from './render-node/render-node.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, ReactiveFormsModule],
-  declarations: [AppComponent, HelloComponent, NodeComponent, TreeComponent],
+  declarations: [
+    AppComponent,
+    HelloComponent,
+    NodeComponent,
+    TreeComponent,
+    RenderNodeComponent,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
