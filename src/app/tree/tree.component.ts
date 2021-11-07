@@ -31,8 +31,8 @@ export class TreeComponent implements OnInit {
   addOtherSkillFormGroup(): FormGroup {
     return this.formBuilder.group({
       name: ['test', Validators.required],
-      edit: [, Validators.required],
-      view: [, Validators.required],
+      edit: [true, Validators.required],
+      view: [true, Validators.required],
       permissions: this.formBuilder.array([]),
     });
   }
@@ -87,7 +87,17 @@ export class TreeComponent implements OnInit {
         text: 'Mode',
       },
       {
-        children: [],
+        children: [
+          // {
+          //   children: [
+          //     {
+          //       children: [],
+          //       text: 'Owner32323',
+          //     },
+          //   ],
+          //   text: 'Owner2',
+          // },
+        ],
         text: 'Helper',
       },
     ];

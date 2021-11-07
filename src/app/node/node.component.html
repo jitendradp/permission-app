@@ -16,7 +16,7 @@
   <ul>
     <li *ngFor="let children of node.children">
       <app-render-node [node]="children"></app-render-node>
-      <!-- <span class="tree_label">{{ children.text }} J</span> -->
+      <node *ngIf="children.children.length > 0" [node]="children"></node>
     </li>
   </ul>
 </ng-container>
