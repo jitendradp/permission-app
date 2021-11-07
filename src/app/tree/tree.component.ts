@@ -49,7 +49,7 @@ export class TreeComponent implements OnInit {
     this.setFormData(this.tree, otherForm);
     // console.log('jit', this.personalForm);
     this.personalForm.valueChanges.subscribe((form: any) => {
-      // console.log({ form });
+      console.log({ form });
     });
     // console.log(this.tree);
   }

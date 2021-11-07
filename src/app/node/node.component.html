@@ -15,7 +15,8 @@
   />
   <ul>
     <li *ngFor="let children of node.children">
-      <span class="tree_label">{{ children.text }} J</span>
+      <app-render-node [node]="children"></app-render-node>
+      <!-- <span class="tree_label">{{ children.text }} J</span> -->
     </li>
   </ul>
 </ng-container>
