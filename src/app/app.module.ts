@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { NodeComponent } from './node/node.component';
-import { TreeComponent } from './tree/tree.component';
+import { PermissionComponent } from './permission/permission.component';
 import { RenderNodeComponent } from './render-node/render-node.component';
 
 @NgModule({
@@ -14,7 +14,7 @@ import { RenderNodeComponent } from './render-node/render-node.component';
     AppComponent,
     HelloComponent,
     NodeComponent,
-    TreeComponent,
+    PermissionComponent,
     RenderNodeComponent,
   ],
   bootstrap: [AppComponent],

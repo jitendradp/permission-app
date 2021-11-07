@@ -1,0 +1,28 @@
+<h1>Create Permission</h1>
+<form [formGroup]="personalForm" (ngSubmit)="onSubmit()">
+  <div class="input-container">
+    <label>First Name: </label>
+    <input type="text" formControlName="firstName" class="form-control" />
+  </div>
+  <div class="input-container">
+    <label>Last Name: </label>
+    <input type="text" formControlName="lastName" class="form-control" />
+  </div>
+  <div class="input-container">
+    <label>Role Name: </label>
+    <input type="text" formControlName="roleName" class="form-control" />
+  </div>
+  <ul class="tree">
+    <li *ngFor="let node of tree">
+      <input
+        *ngIf="node.children.length > 0"
+        type="checkbox"
+        checked="checked"
+        id="c1"
+      />
+      <app-render-node [node]="node"></app-render-node>
+      <node *ngIf="node.children.length > 0" [node]="node"></node>
+    </li>
+  </ul>
+  <button>Save</button>
+</form>
