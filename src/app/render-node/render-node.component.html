@@ -3,7 +3,7 @@
     <div>
       {{ node?.text }}
     </div>
-    <div>
+    <div *ngIf="node.form && node.children.length == 0">
       <span>
         <form [formGroup]="editForm">
           <input

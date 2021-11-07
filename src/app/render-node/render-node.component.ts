@@ -13,7 +13,7 @@ export class RenderNodeComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
+    // console.log(this.node);
     this.editForm = this.node.form;
-    console.log(this.node.form);
   }
 }
