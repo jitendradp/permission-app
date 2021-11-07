@@ -1,0 +1,6 @@
+.label {
+  border: 2px solid rgb(81, 92, 230);
+  background-color: rgb(81, 92, 230);
+  color: rgb(255, 255, 255);
+  padding: 3 px;
+}

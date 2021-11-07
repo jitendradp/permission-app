@@ -12,66 +12,34 @@ export class TreeComponent implements OnInit {
 
   constructor(public formBuilder: FormBuilder) {
     this.personalForm = this.formBuilder.group({
-      firstName: [
-        '',
-        [Validators.required, Validators.minLength(2), Validators.maxLength(8)],
-      ],
-      lastName: [
-        '',
-        [Validators.required, Validators.minLength(2), Validators.maxLength(8)],
-      ],
-      address: ['', [Validators.required]],
-      other: this.formBuilder.array([]),
+      firstName: ['firstName', [Validators.required, Validators.minLength(2)]],
+      lastName: ['lastName', [Validators.required, Validators.minLength(2)]],
+      address: ['roleName', [Validators.required]],
+      permissions: this.formBuilder.array([]),
     });
-    // (<FormArray>this.personalForm.get('other')).push(
-    //   this.addOtherSkillFormGroup()
-    // );
-    // (<FormArray>this.personalForm.get('other')).push(
-    //   this.addOtherSkillFormGroup()
-    // );
-    // (<FormArray>this.personalForm.get('other')).push(
-    //   this.addOtherSkillFormGroup()
-    // );
   }
   ngOnInit() {
     this.getControl();
-
-    let firstNode: Node = {
-      children: [],
-      text: 'Sixth Node',
-      // form: this.getControl(3),
-    };
-
-    // this.addOtherSkillFormGroup()
     this.setForm();
-    this.tree.push(firstNode);
-    let otherForm = <FormArray>this.personalForm.get('other');
+    let otherForm = <FormArray>this.personalForm.get('permissions');
     this.setFormData(this.tree, otherForm);
-    // console.log('jit', this.personalForm);
     this.personalForm.valueChanges.subscribe((form: any) => {
-      console.log({ form });
+      console.log(this.personalForm.valid, 'vlidate form', this.personalForm);
     });
-    // console.log(this.tree);
   }
 
   addOtherSkillFormGroup(): FormGroup {
     return this.formBuilder.group({
       name: ['test', Validators.required],
-      edit: [true, Validators.required],
-      view: [true, Validators.required],
-      other: this.formBuilder.array([]),
+      edit: [, Validators.required],
+      view: [, Validators.required],
+      permissions: this.formBuilder.array([]),
     });
   }
   addNodeTo() {
-    // this.addOtherSkillFormGroup();
-    (<FormArray>this.personalForm.get('other')).push(
+    (<FormArray>this.personalForm.get('permissions')).push(
       this.addOtherSkillFormGroup()
     );
-    // let newNode: Node = {
-    //   children: [],
-    //   text: 'newNode',
-    // };
-    // this.tree.push(newNode);
   }
 
   setFormData(tree, otherForm) {
@@ -79,25 +47,18 @@ export class TreeComponent implements OnInit {
       if (tNode.children.length > 0) {
         otherForm.push(this.addOtherSkillFormGroup());
         let innerGroup = otherForm.at(index) as FormGroup;
-
-        this.setFormData(tNode.children, innerGroup.get('other'));
+        this.setFormData(tNode.children, innerGroup.get('permissions'));
       } else {
-        // otherForm.get('form');
-
         otherForm.push(this.addOtherSkillFormGroup());
-
         const formLenght = otherForm.length - 1;
-        console.log(formLenght);
         let innerGroup = otherForm.at(formLenght) as FormGroup;
-        // this.getControl(index);
-        // (<FormArray>this.personalForm.get('other')).splice(1,0,)
-        tNode['form'] = innerGroup;
+        tNode.form = innerGroup;
       }
     });
   }
 
   public getControl(index: number = 0): FormGroup {
-    let otherForm = this.personalForm.get('other') as FormArray;
+    let otherForm = this.personalForm.get('permissions') as FormArray;
     let formGroup = otherForm.at(index) as FormGroup;
     return formGroup;
   }
@@ -108,51 +69,27 @@ export class TreeComponent implements OnInit {
         children: [
           {
             children: [],
-            text: 'firstNode 1',
+            text: 'Owner',
           },
           {
             children: [],
-            text: 'firstNode 2',
+            text: 'Co-Owner',
           },
         ],
-        text: 'firstNode',
+        text: 'Admin',
       },
       {
         children: [],
-        text: 'Second Node',
-        // form: this.getControl(0),
+        text: 'Head Mode',
       },
       {
         children: [],
-        text: 'Third Node',
-        // form: this.getControl(1),
+        text: 'Mode',
       },
       {
         children: [],
-        text: 'Fourth Node',
-        // form: this.getControl(2),
+        text: 'Helper',
       },
-      // {
-      //   children: [
-      //     {
-      //       children: [],
-      //       text: 'firstNode',
-      //     },
-      //     {
-      //       children: [],
-      //       text: 'firstNode',
-      //     },
-      //     {
-      //       children: [],
-      //       text: 'firstNode',
-      //     },
-      //     {
-      //       children: [],
-      //       text: 'firstNode',
-      //     },
-      //   ],
-      //   text: 'Fifth child',
-      // },
     ];
   }
 }

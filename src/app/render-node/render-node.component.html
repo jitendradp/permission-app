@@ -1,8 +1,6 @@
 <label class="tree_label" for="c1">
   <div style="display:flex">
-    <div>
-      {{ node?.text }}
-    </div>
+    <label class="label"> {{ node?.text }} </label>
     <div *ngIf="node.form && node.children.length == 0">
       <span>
         <form [formGroup]="editForm">
@@ -12,12 +10,14 @@
             class="edit"
             formControlName="edit"
           />
+          Read
           <input
             type="checkbox"
             id="firstname"
             class="edit"
             formControlName="view"
           />
+          Write
         </form>
       </span>
     </div>
