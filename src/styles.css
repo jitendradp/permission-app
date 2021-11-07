@@ -185,3 +185,8 @@ ul {
   padding-left: 0px;
   list-style-type: none;
 }
+
+.tree .edit {
+  position: relative !important;
+  clip: rect(0, 0, 0, 0);
+}

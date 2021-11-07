@@ -9,25 +9,7 @@
       id="c1"
     />
     <app-render-node [node]="node"></app-render-node>
-    <!-- <label class="tree_label" for="c1">{{ node.text }} </label> -->
-    <!--
-        <ng-container *ngIf=node.children.length > 0 >
-            <input type="checkbox" checked="checked" id="c2" />
-            <ul>
-            <li><span class="tree_label">Level 2</span></li>
-            <li><span class="tree_label">Level 2</span></li>
-          </ul>
-         </ng-container> -->
     <node *ngIf="node.children.length > 0" [node]="node"></node>
   </li>
 </ul>
-<!--  <div *ngFor="let node of tree" class="con" >
-        
-        <div style="position:relative;">
-          <div class="node-c">
-            <node [node]="node"></node>
-            </div>
-          </div>
-        </div> -->
-
 <button (click)="addNodeTo()">add node</button>

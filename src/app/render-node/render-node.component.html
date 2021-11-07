@@ -1,1 +1,25 @@
-<label class="tree_label" for="c1">{{ node?.text }} </label>
+<label class="tree_label" for="c1">
+  <div style="display:flex">
+    <div>
+      {{ node?.text }}
+    </div>
+    <div>
+      <span>
+        <form [formGroup]="editForm">
+          <input
+            type="checkbox"
+            id="firstname"
+            class="edit"
+            formControlName="edit"
+          />
+          <input
+            type="checkbox"
+            id="firstname"
+            class="edit"
+            formControlName="view"
+          />
+        </form>
+      </span>
+    </div>
+  </div>
+</label>

@@ -43,6 +43,10 @@ export class TreeComponent implements OnInit {
     };
     this.setForm();
     this.tree.push(firstNode);
+
+    this.personalForm.valueChanges.subscribe((form: any) => {
+      console.log({ form });
+    });
   }
 
   addOtherSkillFormGroup(): FormGroup {

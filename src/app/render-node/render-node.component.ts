@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-render-node',
@@ -7,8 +8,12 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class RenderNodeComponent implements OnInit {
   @Input() node;
+  editForm: FormGroup;
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.editForm = this.node.form;
+    console.log(this.node.form);
+  }
 }
